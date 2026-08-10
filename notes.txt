@@ -1,0 +1,11 @@
+Comportamento estranho no Git Bash...
+Às vezes, o Git Bash apresenta problemas com comandos de entrada (como `gets`)... para contorná-los, execute o programa desta forma:
+
+winpty ruby ​​program_name.rb
+
+Enter a number: 41
+15
+15
+hello.rb:52:in 'String#+': no implicit conversion of Integer into String (TypeError)
+
+puts number + 10
