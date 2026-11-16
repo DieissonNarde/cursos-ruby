@@ -258,7 +258,7 @@ puts square_setter.side_length
 
 
 # 27. Adding Perimeter and Area Methods
-class SquareSetters
+class Square2
     def initialize(side_length)
         @side_length = side_length
     end
@@ -270,4 +270,84 @@ class SquareSetters
     def side_length=(side_length)
         @side_length = side_length
     end
+
+    def perimeter
+        return @side_length * 4
+    end
+
+    def area
+        return @side_length * @side_length
+    end
+
+    def to_s
+        return "Side Length: #{@side_length}\nPerimeter: #{perimeter}\nArea: #{area}"
+    end
 end
+
+my_square2 = Square2.new(10)
+puts my_square2.perimeter
+puts my_square2
+
+# 28. Class Attr Accessor
+class Square3
+    attr_reader
+    attr_writer
+    attr_accessor :side_length
+
+    def initialize(side_length)
+        @side_length = side_length
+    end
+
+    def perimeter
+        return @side_length * 4
+    end
+
+    def area
+        return @side_length * @side_length
+    end
+
+    def to_s
+        return "Side Length: #{@side_length}\nPerimeter: #{perimeter}\nArea: #{area}"
+    end
+end
+
+my_square3 = Square3.new(10)
+my_square3.side_length = 20
+
+puts my_square3.side_length
+
+#29. Creating a Draw Method
+class Square4
+    attr_reader
+    attr_writer
+    attr_accessor :side_length
+
+    def initialize(side_length)
+        @side_length = side_length
+    end
+
+    def perimeter
+        return @side_length * 4
+    end
+
+    def area
+        return @side_length * @side_length
+    end
+
+    def to_s
+        return "Side Length: #{@side_length}\nPerimeter: #{perimeter}\nArea: #{area}"
+    end
+
+    def draw
+        puts "*" * @side_length
+        (@side_length - 2).times do
+            print "*" + (" " * (@side_length - 2)) + "*\n"
+        end
+
+        puts "*" * @side_length
+    end
+end
+
+my_square4 = Square4.new(5)
+
+puts my_square4.draw
